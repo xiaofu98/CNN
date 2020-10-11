@@ -52,8 +52,6 @@ for epoch in range(n_epochs):
         outputs = model(X_test)
         _, pred = torch.max(outputs.data, 1)
         testing_correct += torch.sum(pred == y_test.data)
-    print("Loss is:{:.4f}, Train Accuracy is:{:.4f}%, Test Accuracy is:{:.4f}".format(running_loss / len(data_train),
-                                                                                      100 * running_correct / len(
-                                                                                          data_train),
-                                                                                      100 * testing_correct / len(
-                                                                                          data_test)))
+    print("Loss is:{:.4f}, Train Accuracy is:{:.4f}%, Test Accuracy is:{:.4f}".format(running_loss // len(data_train),
+                                                                                      100 * running_correct // len(data_train),
+                                                                                      100 * testing_correct // len(data_test)))
